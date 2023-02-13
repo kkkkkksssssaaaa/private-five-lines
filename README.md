@@ -1,3 +1,27 @@
+# five-lines-of-code: 2D 퍼즐 게임
+
+## 요소 설명
+
+1. 빨간 사각형은 `플레이어`
+2. 갈색 사각형은 `상자`
+3. 파란색 사각형은 `돌`
+4. 노란색 사각형은 `키` 나 `자물쇠`.
+   - 나중에 수정됨
+5. 연두색 사각형은 `**플럭스**`
+6. 회색 새각형은 `벽`
+7. 흰색 사각형은 `빈 공간`
+
+## 규칙
+
+- 상자나 돌은 밑에 아무것도 없으면 아래로 떨어진다.
+- 플레이어는 돌이나 상자를 한 번에 하나씩 밀 수 있다.
+  - 단, 방해물이나 아래에 빈 공간이 없어야 한다
+- 상자와 오른쪽 하단 모서리의 사이의 경로는 처음에는 자물쇠로 막혀 있으므로, 이를 제거하기 위해 키를 얻어야 한다
+- 플레이어는 플럭스를 밟아 제거할 수 있다.
+- 코드에서 게임 난이도를 변경할 수 있다.
+
+---
+
 # five-lines
 
 In this kata your task is to refactor the code for a small game. When finished it should be easy to add new tile types, or make the key draw as a circle, so we can easily distinguish it from the lock.
@@ -29,18 +53,3 @@ If you like this kata please consider giving the repo a star. You might also con
 If you have feedback or comments on this repo don't hesitate to write me a message or send me a pull request.
 
 Thank you for checking it out.
-
----
-
-# five-lines-of-code: 2D 퍼즐 게임
-
-## 요소 설명
-
-1. 빨간 사각형은 `플레이어`
-2. 갈색 사각형은 `상자`
-3. 파란색 사각형은 `돌`
-4. 노란색 사각형은 `키` 나 `자물쇠`.
-   - 나중에 수정됨
-5. 연두색 사각형은 `**플럭스**`
-6. 회색 새각형은 `벽`
-7. 흰색 사각형은 `빈 공간`
