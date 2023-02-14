@@ -18,7 +18,21 @@ class CommonBird implements Bird {
 }
 
 // 상속
-class Penguin extends CommonBird {
+class ExtendPenguin extends CommonBird {
+  canFly() {
+    return false;
+  }
+}
+
+// 예제 2.5 컴포지션을 사용
+class CompositionPenguin implements Bird {
+  // 컴포지션
+  private bird = new CommonBird();
+
+  hasBeak() {
+    return this.bird.hasBeak();
+  }
+
   canFly() {
     return false;
   }
