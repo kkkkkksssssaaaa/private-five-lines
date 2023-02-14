@@ -1,4 +1,6 @@
-# five-lines-of-code: 2D 퍼즐 게임
+# five-lines-of-code: 2D 퍼즐 게임 예제 코드 실습
+
+_forked from https://github.com/wikibook/five-lines_
 
 ## 요소 설명
 
