@@ -16,6 +16,10 @@ _forked from https://github.com/wikibook/five-lines_
 
 - if 문이 있는 경우, 해당 if 문은 함수의 첫 번째 라인에 존재해야 한다
 
+### if 문에서 else 를 사용하지 말 것
+
+- if-else 를 함께 쓰는 것은 어떠한 결정을 하드코딩 하는 것과 같다
+
 ---
 
 ## 리팩터링 패턴
