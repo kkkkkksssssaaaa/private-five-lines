@@ -2,14 +2,14 @@ enum RawInput {
   RIGHT, LEFT, UP, DOWN
 }
 
-interface Input2 {
+interface Input {
   isRight(): boolean;
   isLeft(): boolean;
   isUp(): boolean;
   isDown(): boolean;
 }
 
-class Right implements Input2 {
+class Right implements Input {
   isRight() {
     return true;
   }
@@ -27,7 +27,7 @@ class Right implements Input2 {
   }
 }
 
-class Left implements Input2 {
+class Left implements Input {
   isRight() {
     return false;
   }
@@ -45,7 +45,7 @@ class Left implements Input2 {
   }
 }
 
-class Up implements Input2 {
+class Up implements Input {
   isRight() {
     return false;
   }
@@ -63,7 +63,7 @@ class Up implements Input2 {
   }
 }
 
-class Down implements Input2 {
+class Down implements Input {
   isRight() {
     return false;
   }
