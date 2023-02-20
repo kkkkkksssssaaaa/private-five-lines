@@ -87,9 +87,13 @@ function min(result: number, arr: number[][], x: number, y: number) {
 // 예제 3.21 2에서 n 까지의 모든 소수를 출력하느 ㄴ함수
 function reportPrimes(n: number) {
   for (let i = 2; i< n; i++) {
-    if (isPrime(i))
-      console.log(`${i} is prime`);
+    reportIfPrime(n);
   }
+}
+
+function reportIfPrime(n: number) {
+  if (isPrime(n))
+    console.log(`${n    } is prime`);
 }
 
 function isPrime(n: number): boolean {
