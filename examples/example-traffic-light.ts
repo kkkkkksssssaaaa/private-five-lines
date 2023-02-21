@@ -1,15 +1,59 @@
-enum TrafficLight {
-  RED, YELLOW, GREEN
+interface TrafficLight {
+  isRed(): boolean;
+  isYellow(): boolean;
+  isGreen(): boolean;
+}
+
+class Red implements TrafficLight {
+  isRed() {
+    return true;
+  }
+
+  isYellow() {
+    return false;
+  }
+
+  isGreen() {
+    return false;
+  }
+}
+
+class Yellow implements TrafficLight {
+  isRed() {
+    return false;
+  }
+
+  isYellow() {
+    return true;
+  }
+
+  isGreen() {
+    return false;
+  }
+}
+
+class Green implements TrafficLight {
+  isRed() {
+    return false;
+  }
+
+  isYellow() {
+    return false;
+  }
+
+  isGreen() {
+    return true;
+  }
 }
 
 const CYCLE = [
-  TrafficLight.RED,
-  TrafficLight.GREEN,
-  TrafficLight.YELLOW
-];
+  new Red(),
+  new Green(),
+  new Yellow()
+]
 
 function updateCarForLight(current: TrafficLight) {
-  if (current === TrafficLight.RED) {
+  if (current.isRed) {
     // car.stop();
   } else {
     // car.drive();
