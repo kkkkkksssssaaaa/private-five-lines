@@ -36,6 +36,10 @@ _forked from https://github.com/wikibook/five-lines_
 
 - 기능을 클래스로 옮겨라.
 
+### 메서드의 인라인화
+
+- 코드를 제거하기 위해, 메서드에서 이를 호출하는 모든 곳으로 코드를 옮긴다.
+
 ---
 
 ## 퍼즐 게임
