@@ -2,6 +2,7 @@ interface TrafficLight {
   isRed(): boolean;
   isYellow(): boolean;
   isGreen(): boolean;
+  updateCar(): void;
 }
 
 class Red implements TrafficLight {
@@ -15,6 +16,10 @@ class Red implements TrafficLight {
 
   isGreen() {
     return false;
+  }
+
+  updateCar() {
+    // car.stop();
   }
 }
 
@@ -30,6 +35,10 @@ class Yellow implements TrafficLight {
   isGreen() {
     return false;
   }
+
+  updateCar() {
+    // car.drive();
+  }
 }
 
 class Green implements TrafficLight {
@@ -44,6 +53,10 @@ class Green implements TrafficLight {
   isGreen() {
     return true;
   }
+
+  updateCar() {
+    // car.drive();
+  }
 }
 
 const CYCLE = [
@@ -53,9 +66,5 @@ const CYCLE = [
 ]
 
 function updateCarForLight(current: TrafficLight) {
-  if (current.isRed) {
-    // car.stop();
-  } else {
-    // car.drive();
-  }
+  current.updateCar();
 }
