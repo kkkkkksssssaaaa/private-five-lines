@@ -1,12 +1,9 @@
-enum RawInput {
-  RIGHT, LEFT, UP, DOWN
-}
-
 interface Input {
   isRight(): boolean;
   isLeft(): boolean;
   isUp(): boolean;
   isDown(): boolean;
+  handle(): void;
 }
 
 class Right implements Input {
@@ -24,6 +21,10 @@ class Right implements Input {
 
   isDown() {
     return false;
+  }
+
+  handle() {
+    moveHorizontal(1);
   }
 }
 
@@ -43,6 +44,10 @@ class Left implements Input {
   isDown() {
     return false;
   }
+
+  handle() {
+    moveHorizontal(-1);
+  }
 }
 
 class Up implements Input {
@@ -61,6 +66,10 @@ class Up implements Input {
   isDown() {
     return false;
   }
+
+  handle() {
+    moveVertical(-1);
+  }
 }
 
 class Down implements Input {
@@ -78,5 +87,9 @@ class Down implements Input {
 
   isDown() {
     return true;
+  }
+
+  handle() {
+    moveVertical(1);
   }
 }
