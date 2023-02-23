@@ -8,13 +8,11 @@ const database: any = {
   }
 }
 
-function deposit(to: string, amount: number) {
-  let accountId = database.find(to);
-  database.updateOne(accountId, {$inc: {balance: amount}});
-}
-
 function transfer(from: string, to: string, amount: number) {
-  deposit(from, -amount);
-  deposit(to, amount);
+  let fromAccountId = database.find(from);
+  database.updateOne(fromAccountId, {$inc: {balance: -amount}});
+
+  let toAccountId = database.find(to);
+  database.updateOne(toAccountId, {$inc: {balance: amount}});
 }
 
