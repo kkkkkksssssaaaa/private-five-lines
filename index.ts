@@ -5,7 +5,7 @@ const SLEEP = 1000 / FPS;
 
 let playerx = 1;
 let playery = 1;
-let map: Tile[][] = [
+let rawMap: Tile[][] = [
   [2, 2, 2, 2, 2, 2, 2, 2],
   [2, 3, 0, 1, 1, 2, 0, 2],
   [2, 4, 2, 6, 1, 2, 0, 2],
@@ -13,8 +13,13 @@ let map: Tile[][] = [
   [2, 4, 1, 1, 1, 9, 0, 2],
   [2, 2, 2, 2, 2, 2, 2, 2],
 ];
+let map: Tile[][];
 
 let inputs: Input[] = [];
+
+function assertExhausted(x: never): never {
+  throw new Error("Unexpected object: " + x);
+}
 
 function removeLock1() {
   for (let y = 0; y < map.length; y++) {
