@@ -20,6 +20,10 @@ _forked from https://github.com/wikibook/five-lines_
 
 - if-else 를 함께 쓰는 것은 어떠한 결정을 하드코딩 하는 것과 같다.
 
+### switch 를 사용하지 말 것
+
+- default 케이스가 없고 모든 case 에 반환 값이 있는 경우가 아니라면 switch 를 사용하지 말라.
+
 ---
 
 ## 리팩터링 패턴
