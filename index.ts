@@ -3,6 +3,17 @@ const TILE_SIZE = 30;
 const FPS = 30;
 const SLEEP = 1000 / FPS;
 
+enum RawTile {
+  AIR,
+  FLUX,
+  UNBREAKABLE,
+  PLAYER,
+  STONE, FALLING_STONE,
+  BOX, FALLING_BOX,
+  KEY1, LOCK1,
+  KEY2, LOCK2
+}
+
 let playerx = 1;
 let playery = 1;
 let rawMap: Tile[][] = [
@@ -19,6 +30,24 @@ let inputs: Input[] = [];
 
 function assertExhausted(x: never): never {
   throw new Error("Unexpected object: " + x);
+}
+
+function transformTile(tile: RawTile) {
+  switch(tile) {
+    case RawTile.AIR: return new Air();
+    case RawTile.FLUX: return new Flux();
+    case RawTile.UNBREAKABLE: return new Unbreakable();
+    case RawTile.PLAYER: return new Player();
+    case RawTile.STONE: return new Stone();
+    case RawTile.FALLING_STONE: return new FallingStone();
+    case RawTile.BOX: return new Box();
+    case RawTile.FALLING_BOX: return new FallingBox();
+    case RawTile.KEY1: return new Key1();
+    case RawTile.KEY2: return new Key2();
+    case RawTile.LOCK1: return new Lock1();
+    case RawTile.LOCK2: return new Lock2();
+    default: assertExhausted(tile);
+  }
 }
 
 function removeLock1() {
