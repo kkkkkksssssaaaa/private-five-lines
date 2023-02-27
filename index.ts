@@ -215,6 +215,7 @@ function gameLoop() {
 }
 
 window.onload = () => {
+  transformMap();
   gameLoop();
 }
 
