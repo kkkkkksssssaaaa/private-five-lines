@@ -16,7 +16,7 @@ enum RawTile {
 
 let playerx = 1;
 let playery = 1;
-let rawMap: Tile[][] = [
+let rawMap: RawTile[][] = [
   [2, 2, 2, 2, 2, 2, 2, 2],
   [2, 3, 0, 1, 1, 2, 0, 2],
   [2, 4, 2, 6, 1, 2, 0, 2],
@@ -47,6 +47,18 @@ function transformTile(tile: RawTile) {
     case RawTile.LOCK1: return new Lock1();
     case RawTile.LOCK2: return new Lock2();
     default: assertExhausted(tile);
+  }
+}
+
+function transformMap() {
+  map = new Array(rawMap.length);
+
+  for (let y = 0; y < rawMap.length; y++) {
+    map[y] = new Array(rawMap[y].length);
+
+    for (let x = 0; x < rawMap[y].length; x++) {
+      map[y][x] = transformTile(rawMap[y][x]);
+    }
   }
 }
 
