@@ -13,6 +13,8 @@ interface Tile {
   isLock2(): boolean;
   color(g: CanvasRenderingContext2D): void;
   draw(g: CanvasRenderingContext2D, x: number, y: number): void;
+  isEdible(): boolean;
+  isPushable(): boolean;
 }
 
 class Flux implements Tile {
@@ -76,6 +78,14 @@ class Flux implements Tile {
       TILE_SIZE,
       TILE_SIZE
     );
+  }
+
+  isEdible(): boolean {
+    return true;
+  }
+
+  isPushable(): boolean {
+    return false;
   }
 }
 
@@ -141,6 +151,14 @@ class Unbreakable implements Tile {
       TILE_SIZE
     );
   }
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return false;
+  }
 }
 
 class Stone implements Tile {
@@ -204,6 +222,14 @@ class Stone implements Tile {
       TILE_SIZE,
       TILE_SIZE
     );
+  }
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return true;
   }
 }
 
@@ -269,6 +295,14 @@ class FallingStone implements Tile {
       TILE_SIZE
     );
   }
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return true;
+  }
 }
 
 class Air implements Tile {
@@ -327,6 +361,14 @@ class Air implements Tile {
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
     
   }
+
+  isEdible(): boolean {
+    return true;
+  }
+
+  isPushable(): boolean {
+    return false;
+  }
 }
 
 class Player implements Tile {
@@ -384,6 +426,14 @@ class Player implements Tile {
 
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
 
+  }
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return false;
   }
 } 
 
@@ -449,6 +499,14 @@ class Box implements Tile {
       TILE_SIZE
     );
   }
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return true;
+  }
 }
 
 class FallingBox implements Tile {
@@ -512,6 +570,14 @@ class FallingBox implements Tile {
       TILE_SIZE,
       TILE_SIZE
     );
+  }
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return true;
   }
 }
 
@@ -577,6 +643,14 @@ class Key1 implements Tile {
       TILE_SIZE
     );
   }  
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return false;
+  }
 }
 
 class Key2 implements Tile {
@@ -641,6 +715,14 @@ class Key2 implements Tile {
       TILE_SIZE
     );
   }  
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return false;
+  }
 }
 
 class Lock1 implements Tile {
@@ -705,6 +787,14 @@ class Lock1 implements Tile {
       TILE_SIZE
     );
   }  
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return false;
+  }
 }
 
 class Lock2 implements Tile {
@@ -769,4 +859,12 @@ class Lock2 implements Tile {
       TILE_SIZE
     );
   }  
+
+  isEdible(): boolean {
+    return false;
+  }
+
+  isPushable(): boolean {
+    return false;
+  }
 }
