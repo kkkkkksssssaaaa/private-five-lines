@@ -131,6 +131,16 @@ class Unbreakable implements Tile {
   color(g: CanvasRenderingContext2D): void {
     g.fillStyle = "#999999";
   }
+
+  draw(g: CanvasRenderingContext2D, x: number, y: number): void {
+    g.fillStyle = "#999999";
+    g.fillRect(
+      x * TILE_SIZE,
+      y * TILE_SIZE,
+      TILE_SIZE,
+      TILE_SIZE
+    );
+  }
 }
 
 class Stone implements Tile {
