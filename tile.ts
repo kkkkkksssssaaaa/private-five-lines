@@ -15,6 +15,7 @@ interface Tile {
   draw(g: CanvasRenderingContext2D, x: number, y: number): void;
   isEdible(): boolean;
   isPushable(): boolean;
+  moveHorizontal(dx: number): void;
 }
 
 class Flux implements Tile {
@@ -86,6 +87,10 @@ class Flux implements Tile {
 
   isPushable(): boolean {
     return false;
+  }
+
+  moveHorizontal(dx: number): void {
+    moveToTile(playerx + dx, playery);
   }
 }
 
@@ -159,6 +164,10 @@ class Unbreakable implements Tile {
   isPushable(): boolean {
     return false;
   }
+
+  moveHorizontal(dx: number): void {
+
+  }
 }
 
 class Stone implements Tile {
@@ -230,6 +239,14 @@ class Stone implements Tile {
 
   isPushable(): boolean {
     return true;
+  }
+
+  moveHorizontal(dx: number): void {
+    if (map[playery][playerx + dx + dx].isAir()
+      && !map[playery + 1][playerx + dx].isAir()) {
+      map[playery][playerx + dx + dx] = this;
+      moveToTile(playerx + dx, playery);
+    }
   }
 }
 
@@ -303,6 +320,14 @@ class FallingStone implements Tile {
   isPushable(): boolean {
     return true;
   }
+
+  moveHorizontal(dx: number): void {
+    if (map[playery][playerx + dx + dx].isAir()
+      && !map[playery + 1][playerx + dx].isAir()) {
+      map[playery][playerx + dx + dx] = this;
+      moveToTile(playerx + dx, playery);
+    }
+  }
 }
 
 class Air implements Tile {
@@ -369,6 +394,10 @@ class Air implements Tile {
   isPushable(): boolean {
     return false;
   }
+
+  moveHorizontal(dx: number): void {
+    moveToTile(playerx + dx, playery);
+  }
 }
 
 class Player implements Tile {
@@ -434,6 +463,10 @@ class Player implements Tile {
 
   isPushable(): boolean {
     return false;
+  }
+
+  moveHorizontal(dx: number): void {
+      
   }
 } 
 
@@ -507,6 +540,14 @@ class Box implements Tile {
   isPushable(): boolean {
     return true;
   }
+
+  moveHorizontal(dx: number): void {
+    if (map[playery][playerx + dx + dx].isAir()
+      && !map[playery + 1][playerx + dx].isAir()) {
+      map[playery][playerx + dx + dx] = this;
+      moveToTile(playerx + dx, playery);
+    }
+  }
 }
 
 class FallingBox implements Tile {
@@ -578,6 +619,13 @@ class FallingBox implements Tile {
 
   isPushable(): boolean {
     return true;
+  }
+
+  moveHorizontal(dx: number): void {
+    if (map[playery][playerx + dx + dx].isAir()
+        && !map[playery + 1][playerx + dx].isAir()) {
+      map[playery][playerx + dx + dx] = this;
+      moveToTile(playerx + dx, playery);
   }
 }
 
@@ -651,6 +699,11 @@ class Key1 implements Tile {
   isPushable(): boolean {
     return false;
   }
+
+  moveHorizontal(dx: number): void {
+    removeLock1();
+    moveToTile(playerx + dx, playery);
+  }
 }
 
 class Key2 implements Tile {
@@ -722,6 +775,11 @@ class Key2 implements Tile {
 
   isPushable(): boolean {
     return false;
+  }
+
+  moveHorizontal(dx: number): void {
+    removeLock1();
+    moveToTile(playerx + dx, playery);
   }
 }
 
@@ -795,6 +853,10 @@ class Lock1 implements Tile {
   isPushable(): boolean {
     return false;
   }
+
+  moveHorizontal(dx: number): void {
+      
+  }
 }
 
 class Lock2 implements Tile {
@@ -866,5 +928,9 @@ class Lock2 implements Tile {
 
   isPushable(): boolean {
     return false;
+  }
+
+  moveHorizontal(dx: number): void {
+      
   }
 }
