@@ -127,11 +127,11 @@ function updateMap() {
 }
 
 function updateTile(x: number, y: number) {
-  if ((map[y][x].isStone() || map[y][x].isFallingStone())
+  if ((map[y][x].isStony())
     && map[y + 1][x].isAir()) {
     map[y + 1][x] = new FallingStone();
     map[y][x] = new Air();
-  } else if ((map[y][x].isBox() || map[y][x].isFallingBox())
+  } else if ((map[y][x].isBoxy())
     && map[y + 1][x].isAir()) {
     map[y + 1][x] = new FallingBox();
     map[y][x] = new Air();
