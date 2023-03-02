@@ -1,4 +1,8 @@
 class Stone implements Tile {
+  constructor(private falling: boolean) {
+    this.falling = falling;
+  }
+
   isFlux(): boolean {
     return false;
   }
@@ -12,7 +16,7 @@ class Stone implements Tile {
   }
 
   isFallingStone(): boolean {
-    return false;
+    return this.falling;
   }
 
   isAir(): boolean {
@@ -70,10 +74,14 @@ class Stone implements Tile {
   }
 
   moveHorizontal(dx: number): void {
-    if (map[playery][playerx + dx + dx].isAir()
-      && !map[playery + 1][playerx + dx].isAir()) {
-      map[playery][playerx + dx + dx] = this;
-      moveToTile(playerx + dx, playery);
+    if (this.isFallingStone() === false) {
+      if (map[playery][playerx + dx + dx].isAir()
+        && !map[playery + 1][playerx + dx].isAir()) {
+        map[playery][playerx + dx + dx] = this;
+        moveToTile(playerx + dx, playery);
+      }
+    } else if (this.isFallingStone() === true) {
+
     }
   }
 
