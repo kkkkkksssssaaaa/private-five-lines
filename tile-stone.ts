@@ -76,4 +76,12 @@ class Stone implements Tile {
       moveToTile(playerx + dx, playery);
     }
   }
+
+  isStony(): boolean {
+    return true;
+  }
+  
+  isBoxy(): boolean {
+    return false;
+  }
 }

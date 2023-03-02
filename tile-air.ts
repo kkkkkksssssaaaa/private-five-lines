@@ -66,4 +66,12 @@ class Air implements Tile {
   moveHorizontal(dx: number): void {
     moveToTile(playerx + dx, playery);
   }
+
+  isStony(): boolean {
+    return false;
+  }
+  
+  isBoxy(): boolean {
+    return false;
+  }
 }

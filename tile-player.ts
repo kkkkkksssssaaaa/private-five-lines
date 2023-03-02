@@ -66,4 +66,12 @@ class Player implements Tile {
   moveHorizontal(dx: number): void {
       
   }
+
+  isStony(): boolean {
+    return false;
+  }
+  
+  isBoxy(): boolean {
+    return false;
+  }
 } 

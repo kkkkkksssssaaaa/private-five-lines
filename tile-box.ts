@@ -76,4 +76,12 @@ class Box implements Tile {
       moveToTile(playerx + dx, playery);
     }
   }
+
+  isStony(): boolean {
+    return false;
+  }
+  
+  isBoxy(): boolean {
+    return true;
+  }
 }

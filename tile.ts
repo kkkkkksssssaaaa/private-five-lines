@@ -16,4 +16,6 @@ interface Tile {
   isEdible(): boolean;
   isPushable(): boolean;
   moveHorizontal(dx: number): void;
+  isStony(): boolean;
+  isBoxy(): boolean;
 }

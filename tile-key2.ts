@@ -73,4 +73,12 @@ class Key2 implements Tile {
     removeLock1();
     moveToTile(playerx + dx, playery);
   }
+
+  isStony(): boolean {
+    return false;
+  }
+  
+  isBoxy(): boolean {
+    return false;
+  }
 }
