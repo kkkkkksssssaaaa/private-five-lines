@@ -1,5 +1,5 @@
 class Stone implements Tile {
-  constructor(private falling: boolean) {
+  constructor(private falling: FallingState) {
     this.falling = falling;
   }
 
@@ -16,7 +16,7 @@ class Stone implements Tile {
   }
 
   isFallingStone(): boolean {
-    return this.falling;
+    return this.falling === FallingState.FALLING;
   }
 
   isAir(): boolean {
