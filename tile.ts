@@ -20,4 +20,5 @@ interface Tile {
   isBoxy(): boolean;
   drop(): void;
   rest(): void;
+  isFalling(): boolean;
 }

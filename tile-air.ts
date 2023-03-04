@@ -82,4 +82,8 @@ class Air implements Tile {
   rest(): void {
       
   }
+
+  isFalling(): boolean {
+    return false;
+  }
 }

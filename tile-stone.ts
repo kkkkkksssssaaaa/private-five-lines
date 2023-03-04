@@ -92,4 +92,8 @@ class Stone implements Tile {
   rest(): void {
     this.falling = new Resting();
   }
+
+  isFalling(): boolean {
+    return this.falling.isFalling();
+  }
 }

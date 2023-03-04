@@ -89,4 +89,8 @@ class Key1 implements Tile {
   rest(): void {
       
   }
+
+  isFalling(): boolean {
+    return false;
+  }
 }

@@ -88,4 +88,8 @@ class Unbreakable implements Tile {
   rest(): void {
       
   }
+
+  isFalling(): boolean {
+    return false;
+  }
 }

@@ -88,4 +88,8 @@ class Flux implements Tile {
   rest(): void {
       
   }
+
+  isFalling(): boolean {
+    return false;
+  }
 }

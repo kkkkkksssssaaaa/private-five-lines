@@ -82,4 +82,8 @@ class Player implements Tile {
   rest(): void {
       
   }
+
+  isFalling(): boolean {
+    return false;
+  }
 } 
