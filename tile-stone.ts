@@ -16,7 +16,7 @@ class Stone implements Tile {
   }
 
   isFallingStone(): boolean {
-    return this.falling === FallingState.FALLING;
+    return this.falling.isFalling();
   }
 
   isAir(): boolean {
