@@ -6,4 +6,8 @@ class Falling implements FallingState {
   isResting(): boolean {
     return false;
   }
+
+  moveHorizontal(tile: Tile, dx: number): void {
+    
+  }
 }
