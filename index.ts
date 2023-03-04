@@ -14,6 +14,11 @@ enum RawTile {
   KEY2, LOCK2
 }
 
+enum FallingState {
+  FALLING,
+  RESTING
+}
+
 let playerx = 1;
 let playery = 1;
 let rawMap: RawTile[][] = [
