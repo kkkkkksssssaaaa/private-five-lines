@@ -84,4 +84,12 @@ class Stone implements Tile {
   isBoxy(): boolean {
     return false;
   }
+
+  drop(): void {
+    this.falling = new Falling();
+  }
+
+  rest(): void {
+    this.falling = new Resting();
+  }
 }

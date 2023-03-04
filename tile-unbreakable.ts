@@ -80,4 +80,12 @@ class Unbreakable implements Tile {
   isBoxy(): boolean {
     return false;
   }
+
+  drop(): void {
+      
+  }
+
+  rest(): void {
+      
+  }
 }

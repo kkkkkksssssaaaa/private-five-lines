@@ -74,4 +74,12 @@ class Player implements Tile {
   isBoxy(): boolean {
     return false;
   }
+
+  drop(): void {
+      
+  }
+
+  rest(): void {
+      
+  }
 } 

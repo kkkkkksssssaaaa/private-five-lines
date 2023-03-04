@@ -80,4 +80,12 @@ class Lock2 implements Tile {
   isBoxy(): boolean {
     return false;
   }
+
+  drop(): void {
+      
+  }
+
+  rest(): void {
+      
+  }
 }

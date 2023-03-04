@@ -81,4 +81,12 @@ class Key1 implements Tile {
   isBoxy(): boolean {
     return false;
   }
+
+  drop(): void {
+      
+  }
+
+  rest(): void {
+      
+  }
 }

@@ -84,4 +84,12 @@ class Box implements Tile {
   isBoxy(): boolean {
     return true;
   }
+
+  drop(): void {
+    this.falling = new Falling();
+  }
+
+  rest(): void {
+    this.falling = new Resting();
+  }
 }

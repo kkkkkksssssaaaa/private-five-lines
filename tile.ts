@@ -18,4 +18,6 @@ interface Tile {
   moveHorizontal(dx: number): void;
   isStony(): boolean;
   isBoxy(): boolean;
+  drop(): void;
+  rest(): void;
 }
