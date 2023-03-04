@@ -3,11 +3,7 @@ class Falling implements FallingState {
     return true;
   }
 
-  isResting(): boolean {
-    return false;
-  }
-
   moveHorizontal(tile: Tile, dx: number): void {
-    
+
   }
 }
