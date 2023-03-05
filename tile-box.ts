@@ -11,27 +11,11 @@ class Box implements Tile {
       return false;
   }
 
-  isStone(): boolean {
-    return false;
-  }
-
-  isFallingStone(): boolean {
-    return this.falling.isFalling();
-  }
-
   isAir(): boolean {
     return false;
   }
 
   isPlayer(): boolean {
-    return false;
-  }
-
-  isBox(): boolean {
-    return true;
-  }
-
-  isFallingBox(): boolean {
     return false;
   }
 
@@ -65,32 +49,8 @@ class Box implements Tile {
     );
   }
 
-  isEdible(): boolean {
-    return false;
-  }
-
-  isPushable(): boolean {
-    return true;
-  }
-
   moveHorizontal(dx: number): void {
     this.falling.moveHorizontal(this, dx);
-  }
-
-  isStony(): boolean {
-    return false;
-  }
-  
-  isBoxy(): boolean {
-    return true;
-  }
-
-  drop(): void {
-    this.falling = new Falling();
-  }
-
-  rest(): void {
-    this.falling = new Resting();
   }
 
   isFalling(): boolean {

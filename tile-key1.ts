@@ -7,27 +7,11 @@ class Key1 implements Tile {
       return false;
   }
 
-  isStone(): boolean {
-    return false;
-  }
-
-  isFallingStone(): boolean {
-    return false;
-  }
-
   isAir(): boolean {
     return false;
   }
 
   isPlayer(): boolean {
-    return false;
-  }
-
-  isBox(): boolean {
-    return false;
-  }
-
-  isFallingBox(): boolean {
     return false;
   }
 
@@ -61,33 +45,9 @@ class Key1 implements Tile {
     );
   }  
 
-  isEdible(): boolean {
-    return false;
-  }
-
-  isPushable(): boolean {
-    return false;
-  }
-
   moveHorizontal(dx: number): void {
     removeLock1();
     moveToTile(playerx + dx, playery);
-  }
-
-  isStony(): boolean {
-    return false;
-  }
-  
-  isBoxy(): boolean {
-    return false;
-  }
-
-  drop(): void {
-      
-  }
-
-  rest(): void {
-      
   }
 
   isFalling(): boolean {

@@ -4,14 +4,6 @@ class Lock2 implements Tile {
   }
 
   isUnbreakable(): boolean {
-      return false;
-  }
-
-  isStone(): boolean {
-    return false;
-  }
-
-  isFallingStone(): boolean {
     return false;
   }
 
@@ -20,14 +12,6 @@ class Lock2 implements Tile {
   }
 
   isPlayer(): boolean {
-    return false;
-  }
-
-  isBox(): boolean {
-    return false;
-  }
-
-  isFallingBox(): boolean {
     return false;
   }
 
@@ -61,31 +45,7 @@ class Lock2 implements Tile {
     );
   }  
 
-  isEdible(): boolean {
-    return false;
-  }
-
-  isPushable(): boolean {
-    return false;
-  }
-
   moveHorizontal(dx: number): void {
-      
-  }
-
-  isStony(): boolean {
-    return false;
-  }
-  
-  isBoxy(): boolean {
-    return false;
-  }
-
-  drop(): void {
-      
-  }
-
-  rest(): void {
       
   }
 

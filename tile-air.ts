@@ -7,27 +7,11 @@ class Air implements Tile {
     return false;
   }
 
-  isStone(): boolean {
-    return false;
-  }
-
-  isFallingStone(): boolean {
-    return false;
-  }
-
   isAir(): boolean {
     return true;
   }
 
   isPlayer(): boolean {
-    return false;
-  }
-
-  isBox(): boolean {
-    return false;
-  }
-
-  isFallingBox(): boolean {
     return false;
   }
 
@@ -55,32 +39,8 @@ class Air implements Tile {
     
   }
 
-  isEdible(): boolean {
-    return true;
-  }
-
-  isPushable(): boolean {
-    return false;
-  }
-
   moveHorizontal(dx: number): void {
     moveToTile(playerx + dx, playery);
-  }
-
-  isStony(): boolean {
-    return false;
-  }
-  
-  isBoxy(): boolean {
-    return false;
-  }
-
-  drop(): void {
-      
-  }
-
-  rest(): void {
-      
   }
 
   isFalling(): boolean {

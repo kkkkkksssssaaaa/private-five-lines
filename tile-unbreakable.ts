@@ -7,27 +7,11 @@ class Unbreakable implements Tile {
     return true;
   }
 
-  isStone(): boolean {
-    return false;
-  }
-
-  isFallingStone(): boolean {
-    return false;
-  }
-
   isAir(): boolean {
     return false;
   }
 
   isPlayer(): boolean {
-    return false;
-  }
-
-  isBox(): boolean {
-    return false;
-  }
-
-  isFallingBox(): boolean {
     return false;
   }
 
@@ -61,32 +45,8 @@ class Unbreakable implements Tile {
     );
   }
 
-  isEdible(): boolean {
-    return false;
-  }
-
-  isPushable(): boolean {
-    return false;
-  }
-
   moveHorizontal(dx: number): void {
 
-  }
-
-  isStony(): boolean {
-    return false;
-  }
-  
-  isBoxy(): boolean {
-    return false;
-  }
-
-  drop(): void {
-      
-  }
-
-  rest(): void {
-      
   }
 
   isFalling(): boolean {

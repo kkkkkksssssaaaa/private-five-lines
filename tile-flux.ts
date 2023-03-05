@@ -7,27 +7,11 @@ class Flux implements Tile {
     return false;
   }
 
-  isStone(): boolean {
-    return false;
-  }
-
-  isFallingStone(): boolean {
-    return false;
-  }
-
   isAir(): boolean {
     return false;
   }
 
   isPlayer(): boolean {
-    return false;
-  }
-
-  isBox(): boolean {
-    return false;
-  }
-
-  isFallingBox(): boolean {
     return false;
   }
 
@@ -61,32 +45,8 @@ class Flux implements Tile {
     );
   }
 
-  isEdible(): boolean {
-    return true;
-  }
-
-  isPushable(): boolean {
-    return false;
-  }
-
   moveHorizontal(dx: number): void {
     moveToTile(playerx + dx, playery);
-  }
-
-  isStony(): boolean {
-    return false;
-  }
-  
-  isBoxy(): boolean {
-    return false;
-  }
-
-  drop(): void {
-      
-  }
-
-  rest(): void {
-      
   }
 
   isFalling(): boolean {
@@ -98,6 +58,6 @@ class Flux implements Tile {
   }
 
   update(x: number, y: number): void {
-    
+
   }
 }
