@@ -108,7 +108,7 @@ class Stone implements Tile {
       map[y + 1][x] = this;
       map[y][x] = new Air();
     } else if (this.falling.isFalling()) {
-      map[y][x].rest();
+      this.falling = new Resting();
     }
   }
 }
