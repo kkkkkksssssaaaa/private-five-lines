@@ -127,8 +127,7 @@ function updateMap() {
 }
 
 function updateTile(x: number, y: number) {
-  if ((map[y][x].isStony()
-    || map[y][x].isBoxy())
+  if ((map[y][x].canFall())
     && map[y + 1][x].isAir()) {
     // 돌이나 상자를 떨어뜨리고 타일을 교체한 후 새로 공기를 주입
     map[y][x].drop();
