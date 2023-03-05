@@ -92,4 +92,8 @@ class Unbreakable implements Tile {
   isFalling(): boolean {
     return false;
   }
+
+  canFall(): boolean {
+    return false;
+  }
 }

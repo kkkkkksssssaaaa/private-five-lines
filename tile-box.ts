@@ -96,4 +96,8 @@ class Box implements Tile {
   isFalling(): boolean {
     return this.falling.isFalling();
   }
+
+  canFall(): boolean {
+    return true;
+  }
 }

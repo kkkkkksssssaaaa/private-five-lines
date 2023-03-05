@@ -21,4 +21,5 @@ interface Tile {
   drop(): void;
   rest(): void;
   isFalling(): boolean;
+  canFall(): boolean;
 }

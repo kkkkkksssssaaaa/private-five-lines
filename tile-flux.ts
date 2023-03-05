@@ -92,4 +92,8 @@ class Flux implements Tile {
   isFalling(): boolean {
     return false;
   }
+
+  canFall(): boolean {
+    return false;
+  }
 }

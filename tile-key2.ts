@@ -93,4 +93,8 @@ class Key2 implements Tile {
   isFalling(): boolean {
     return false;
   }
+
+  canFall(): boolean {
+    return false;
+  }
 }
