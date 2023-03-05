@@ -24,6 +24,10 @@ _forked from https://github.com/wikibook/five-lines_
 
 - default 케이스가 없고 모든 case 에 반환 값이 있는 경우가 아니라면 switch 를 사용하지 말라.
 
+### 순수 조건 사용
+
+- 순수 조건이란, 조건에 부수적인 동작이 없어야 한다는 것을 의미한다. 조건은 항상 순수 조건이어야 한다.
+
 ---
 
 ## 리팩터링 패턴
