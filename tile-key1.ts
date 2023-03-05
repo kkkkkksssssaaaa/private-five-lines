@@ -97,4 +97,8 @@ class Key1 implements Tile {
   canFall(): boolean {
     return false;
   }
+
+  update(x: number, y: number): void {
+    
+  }
 }

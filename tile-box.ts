@@ -100,4 +100,15 @@ class Box implements Tile {
   canFall(): boolean {
     return true;
   }
+
+  update(x: number, y: number): void {
+    if (map[y + 1][x].isAir()) {
+      // 돌이나 상자를 떨어뜨리고 타일을 교체한 후 새로 공기를 주입
+      this.falling = new Falling();
+      map[y + 1][x] = this;
+      map[y][x] = new Air();
+    } else if (this.falling.isFalling()) {
+      map[y][x].rest();
+    }
+  }
 }

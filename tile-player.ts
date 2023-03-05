@@ -90,4 +90,8 @@ class Player implements Tile {
   canFall(): boolean {
     return false;
   }
+
+  update(x: number, y: number): void {
+    
+  }
 } 
