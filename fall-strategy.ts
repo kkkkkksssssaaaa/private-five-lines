@@ -1,4 +1,4 @@
-class FallStrategy {
+  class FallStrategy {
   constructor(private falling: FallingState) {
     this.falling = falling;
   }
@@ -8,13 +8,14 @@ class FallStrategy {
   }
 
   update(tile: Tile, x: number, y: number): void {
-    if (map[y + 1][x].isAir()) {
-      // 돌이나 상자를 떨어뜨리고 타일을 교체한 후 새로 공기를 주입
-      this.falling = new Falling();
+    // 돌이나 상자를 떨어뜨리고 타일을 교체한 후 새로 공기를 주입
+    this.falling = map[y + 1][x].isAir()
+      ? new Falling()
+      : new Resting();
+    
+    if (this.falling.isFalling()) {
       map[y + 1][x] = tile;
       map[y][x] = new Air();
-    } else if (this.falling.isFalling()) {
-      this.falling = new Resting();
     }
   }
 }
