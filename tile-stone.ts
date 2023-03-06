@@ -1,8 +1,8 @@
 class Stone implements Tile {
-  private fallingStrategy: FallingStrategy
+  private fallingStrategy: FallStrategy
 
   constructor(falling: FallingState) {
-    this.fallingStrategy = new FallingStrategy(falling);
+    this.fallingStrategy = new FallStrategy(falling);
   }
 
   isFlux(): boolean {

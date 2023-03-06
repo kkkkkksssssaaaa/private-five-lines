@@ -1,4 +1,4 @@
-class FallingStrategy {
+class FallStrategy {
   constructor(private falling: FallingState) {
     this.falling = falling;
   }
