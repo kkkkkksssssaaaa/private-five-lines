@@ -1,6 +1,9 @@
 class Box implements Tile {
-  constructor(private falling: FallingState) {
+  constructor(
+    private falling: FallingState,
+    private fallingStrategy: FallingStrategy) {
     this.falling = falling;
+    this.fallingStrategy = new FallingStrategy();
   }
 
   isFlux(): boolean {
