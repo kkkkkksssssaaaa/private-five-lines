@@ -1,4 +1,4 @@
-  class FallStrategy {
+class FallStrategy {
   constructor(private falling: FallingState) {
     this.falling = falling;
   }
@@ -13,6 +13,10 @@
       ? new Falling()
       : new Resting();
     
+    this.drop(tile, x, y);
+  }
+
+  private drop(tile: Tile, x: number, y: number): void {
     if (this.falling.isFalling()) {
       map[y + 1][x] = tile;
       map[y][x] = new Air();
