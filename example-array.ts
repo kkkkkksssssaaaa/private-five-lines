@@ -6,11 +6,17 @@ class ArrayMinimum {
   process(arr: number[]) {
     for (let i = 0; i < arr.length; i++) {
       if (this.accumulator > arr[i]) {
-        this.accumulator = arr[i];
+        this.processElement(arr[i]);
       }
     }
 
     return this.accumulator;
+  }
+
+  processElement(e: number) {
+    if (this.accumulator > e) {
+      this.accumulator = e;
+    }
   }
 }
 
@@ -21,9 +27,13 @@ class ArraySum {
 
   process(arr: number[]) {
     for (let i = 0; i < arr.length; i++) {
-      this.accumulator += arr[i];
+      this.processElement(arr[i]);
     }
 
     return this.accumulator;
+  }
+
+  processElement(e: number) {
+    this.accumulator += e;
   }
 }
