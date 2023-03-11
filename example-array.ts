@@ -10,7 +10,7 @@ class ArrayMinimum {
       this.processElement(arr[i]);
     }
 
-    return this.accumulator;
+    return this.processor.getAccumulator();
   }
 
   processElement(e: number) {
@@ -30,7 +30,7 @@ class ArraySum {
       this.processElement(arr[i]);
     }
 
-    return this.accumulator;
+    return this.processor.getAccumulator();
   }
 
   processElement(e: number) {
@@ -48,6 +48,10 @@ class MinimumProcessor {
       this.accumulator = e;
     }
   }
+
+  getAccumulator() {
+    return this.accumulator;
+  }
 }
 
 class SumProcessor {
@@ -57,5 +61,9 @@ class SumProcessor {
 
   processElement(e: number) {
     this.accumulator += e;
+  }
+
+  getAccumulator() {
+    return this.accumulator;
   }
 }
