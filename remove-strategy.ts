@@ -1,5 +1,5 @@
 interface RemoveStrategy {
-  check(tile: Tile): void;
+  check(tile: Tile): boolean;
 }
 
 class RemoveLock1 implements RemoveStrategy {
