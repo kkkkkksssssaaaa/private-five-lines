@@ -46,7 +46,7 @@ class Key1 implements Tile {
   }  
 
   moveHorizontal(dx: number): void {
-    removeLock1();
+    remove(new RemoveLock1());
     moveToTile(playerx + dx, playery);
   }
 
