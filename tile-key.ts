@@ -1,8 +1,6 @@
 class Key implements Tile {
   constructor(
-    private color: string,
-    private removeStrategy: RemoveStrategy) {
-  }
+    private keyConf: KeyConfiguration) { }
 
   isFlux(): boolean {
     return false;
@@ -21,7 +19,7 @@ class Key implements Tile {
   }
   
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
-    g.fillStyle = this.color;
+    g.fillStyle = this.keyConf.getColor();
     g.fillRect(
       x * TILE_SIZE,
       y * TILE_SIZE,
@@ -31,8 +29,13 @@ class Key implements Tile {
   }  
 
   moveHorizontal(dx: number): void {
-    remove(this.removeStrategy);
+    remove(this.keyConf.getRemoveStrategy());
     moveToTile(playerx + dx, playery);
+  }
+
+  moveVertical(dy: number) {
+    remove(this.keyConf.getRemoveStrategy());
+    moveToTile(playerx, playery + dy);
   }
 
   update(x: number, y: number): void {

@@ -1,8 +1,6 @@
 class LockTile implements Tile {
   constructor(
-    private color: string,
-    private lock1: boolean) {
-  }
+    private keyConf: KeyConfiguration) { }
 
   isFlux(): boolean {
     return false;
@@ -21,7 +19,7 @@ class LockTile implements Tile {
   }
   
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
-    g.fillStyle = this.color;
+    g.fillStyle = this.keyConf.getColor();
     g.fillRect(
       x * TILE_SIZE,
       y * TILE_SIZE,
@@ -39,10 +37,10 @@ class LockTile implements Tile {
   }
 
   isLock1() {
-    return this.lock1;
+    return this.keyConf.is1();
   }
 
   isLock2() {
-    return !this.lock1;
+    return !this.keyConf.is1();
   }
 }
