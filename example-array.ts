@@ -15,10 +15,10 @@ class ArrayMinimum {
 }
 
 class ArraySum {
-  private processor: SumProcessor;
+  private processor: TmpName;
 
   constructor(accumulator: number) {
-    this.processor = new SumProcessor(accumulator);
+    this.processor = new TmpName(accumulator);
   }
 
   process(arr: number[]) {
@@ -46,7 +46,7 @@ class MinimumProcessor {
   }
 }
 
-class SumProcessor {
+class TmpName implements SumProcessor {
   constructor(private accumulator: number) {
     
   }
@@ -58,4 +58,8 @@ class SumProcessor {
   getAccumulator() {
     return this.accumulator;
   }
+}
+
+interface SumProcessor {
+
 }
