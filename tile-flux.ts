@@ -15,22 +15,6 @@ class Flux implements Tile {
     return false;
   }
 
-  isKey1(): boolean {
-    return false;
-  }
-
-  isKey2(): boolean {
-    return false;
-  }
-
-  isLock1(): boolean {
-    return false;
-  }
-
-  isLock2(): boolean {
-    return false;
-  }
-
   color(g: CanvasRenderingContext2D): void {
     g.fillStyle = "#ccffcc";
   }

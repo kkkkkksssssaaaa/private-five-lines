@@ -15,22 +15,6 @@ class Lock1 implements Tile {
     return false;
   }
 
-  isKey1(): boolean {
-    return false;
-  }
-
-  isKey2(): boolean {
-    return false;
-  }
-
-  isLock1(): boolean {
-    return true;
-  }
-
-  isLock2(): boolean {
-    return false;
-  }
-
   color(g: CanvasRenderingContext2D): void {
     g.fillStyle = "#ffcc00";
   }
