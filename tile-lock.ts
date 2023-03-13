@@ -1,8 +1,7 @@
 class LockTile implements Tile {
   constructor(
     private color: string,
-    private lock1: boolean,
-    private lock2: boolean) {
+    private lock1: boolean) {
   }
 
   isFlux(): boolean {
@@ -44,6 +43,6 @@ class LockTile implements Tile {
   }
 
   isLock2() {
-    return this.lock2;
+    return !this.lock1;
   }
 }

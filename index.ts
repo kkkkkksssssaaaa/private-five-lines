@@ -42,10 +42,10 @@ function transformTile(tile: RawTile) {
     case RawTile.FALLING_STONE: return new Stone(new Falling());
     case RawTile.BOX: return new Box(new Resting());
     case RawTile.FALLING_BOX: return new Box(new Falling());
-    case RawTile.KEY1: return new Key1();
-    case RawTile.KEY2: return new Key2();
-    case RawTile.LOCK1: return new Lock1();
-    case RawTile.LOCK2: return new Lock2();
+    case RawTile.KEY1: return new Key("#ffcc00", new RemoveLock1());
+    case RawTile.KEY2: return new Key("#ffcc00", new RemoveLock2());
+    case RawTile.LOCK1: return new LockTile("#ffcc00", true);
+    case RawTile.LOCK2: return new LockTile("#ffcc00", false);
     default: assertExhausted(tile);
   }
 }
