@@ -47,10 +47,6 @@ class Air implements Tile {
     return false;
   }
 
-  canFall(): boolean {
-    return false;
-  }
-
   update(x: number, y: number): void {
     
   }
