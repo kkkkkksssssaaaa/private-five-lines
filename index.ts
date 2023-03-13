@@ -67,7 +67,7 @@ function removeLock1() {
 
   for (let y = 0; y < map.length; y++) {
     for (let x = 0; x < map[y].length; x++) {
-      if (this.check(map[y][x])) {
+      if (shouldRemove.check(map[y][x])) {
         map[y][x] = new Air();
       }
     }
@@ -82,10 +82,6 @@ function removeLock2() {
       }
     }
   }
-}
-
-function check(tile: Tile) {
-  return this.isLock1();
 }
 
 function moveToTile(newx: number, newy: number) {
