@@ -21,22 +21,6 @@ class Box implements Tile {
     return false;
   }
 
-  isKey1(): boolean {
-    return false;
-  }
-
-  isKey2(): boolean {
-    return false;
-  }
-
-  isLock1(): boolean {
-    return false;
-  }
-
-  isLock2(): boolean {
-    return false;
-  }
-
   color(g: CanvasRenderingContext2D): void {
     g.fillStyle = "#8b4513";
   }
@@ -55,16 +39,6 @@ class Box implements Tile {
     this.fallingStrategy
       .getFalling()
       .moveHorizontal(this, dx);
-  }
-
-  isFalling(): boolean {
-    return this.fallingStrategy
-      .getFalling()
-      .isFalling();
-  }
-
-  canFall(): boolean {
-    return true;
   }
 
   update(x: number, y: number): void {
