@@ -49,10 +49,6 @@ class Unbreakable implements Tile {
 
   }
 
-  isFalling(): boolean {
-    return false;
-  }
-
   update(x: number, y: number): void {
     
   }

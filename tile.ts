@@ -10,6 +10,5 @@ interface Tile {
   color(g: CanvasRenderingContext2D): void;
   draw(g: CanvasRenderingContext2D, x: number, y: number): void;
   moveHorizontal(dx: number): void;
-  isFalling(): boolean;
   update(x: number, y: number): void;
 }

@@ -49,10 +49,6 @@ class Flux implements Tile {
     moveToTile(playerx + dx, playery);
   }
 
-  isFalling(): boolean {
-    return false;
-  }
-
   update(x: number, y: number): void {
 
   }
