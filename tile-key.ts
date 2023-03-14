@@ -17,6 +17,26 @@ class Key implements Tile {
   isPlayer(): boolean {
     return false;
   }
+
+  isLock1(): boolean {
+    return false;
+  }
+
+  isLock2(): boolean {
+    return false;
+  }
+
+  isKey1(): boolean {
+    return false;
+  }
+
+  isKey2(): boolean {
+    return false;
+  }
+
+  color(g: CanvasRenderingContext2D): void {
+
+  }
   
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
     g.fillStyle = this.keyConf.getColor();

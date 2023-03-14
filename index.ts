@@ -14,6 +14,12 @@ enum RawTile {
   KEY2, LOCK2
 }
 
+const YELLOW_KEY =
+  new KeyConfiguration("#ffcc00", true, new RemoveLock1());
+
+const SKY_KEY =
+  new KeyConfiguration("#ffcc00", false, new RemoveLock2());
+
 let playerx = 1;
 let playery = 1;
 let rawMap: RawTile[][] = [
@@ -42,10 +48,10 @@ function transformTile(tile: RawTile) {
     case RawTile.FALLING_STONE: return new Stone(new Falling());
     case RawTile.BOX: return new Box(new Resting());
     case RawTile.FALLING_BOX: return new Box(new Falling());
-    case RawTile.KEY1: return new Key("#ffcc00", new RemoveLock1());
-    case RawTile.KEY2: return new Key("#ffcc00", new RemoveLock2());
-    case RawTile.LOCK1: return new LockTile("#ffcc00", true);
-    case RawTile.LOCK2: return new LockTile("#ffcc00", false);
+    case RawTile.KEY1: return new Key(YELLOW_KEY);
+    case RawTile.KEY2: return new Key(SKY_KEY);
+    case RawTile.LOCK1: return new LockTile(YELLOW_KEY);
+    case RawTile.LOCK2: return new LockTile(SKY_KEY);
     default: assertExhausted(tile);
   }
 }

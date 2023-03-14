@@ -18,6 +18,26 @@ class LockTile implements Tile {
     return false;
   }
   
+  isLock1() {
+    return this.keyConf.is1();
+  }
+
+  isLock2() {
+    return !this.keyConf.is1();
+  }
+
+  isKey1(): boolean {
+    return false;
+  }
+
+  isKey2(): boolean {
+    return false;
+  }
+  
+  color(g: CanvasRenderingContext2D): void {
+    
+  }
+
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
     g.fillStyle = this.keyConf.getColor();
     g.fillRect(
@@ -34,13 +54,5 @@ class LockTile implements Tile {
 
   update(x: number, y: number): void {
     
-  }
-
-  isLock1() {
-    return this.keyConf.is1();
-  }
-
-  isLock2() {
-    return !this.keyConf.is1();
   }
 }
