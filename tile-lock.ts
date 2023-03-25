@@ -39,7 +39,7 @@ class LockTile implements Tile {
   }
 
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
-    g.fillStyle = this.keyConf.getColor();
+    this.keyConf.setColor(g);
     g.fillRect(
       x * TILE_SIZE,
       y * TILE_SIZE,
