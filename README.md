@@ -84,6 +84,10 @@ _forked from https://github.com/wikibook/five-lines_
 
 - 이 패턴을 도입함으로써 성급하게 추상화를 하지 않고 인터페이스가 필요한 시점까지(변형을 도입하고 싶을 때) 까지 연기할 수 있다.
 
+### getter 와 setter 제거하기
+
+- 기능을 데이터에 더 가깝게 이동하여 getter 와 setter 를 제거할 수 있다.
+
 ---
 
 ## 퍼즐 게임
