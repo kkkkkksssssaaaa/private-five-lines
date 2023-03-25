@@ -32,6 +32,10 @@ _forked from https://github.com/wikibook/five-lines_
 
 - 가독성에 도움이 되지 않으며, 도움이 되지 않는 일반화의 한 형태이다.
 
+### getter 와 setter 를 사용하지 말 것
+
+- boolean 이 아닌 필드를 직접 할당하거나 반환하는 메서드를 사용하지 말라.
+
 ---
 
 ## 리팩터링 패턴
