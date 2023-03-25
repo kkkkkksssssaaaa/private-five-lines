@@ -4,6 +4,7 @@ class KeyConfiguration {
     private _1: boolean,
     private removeStrategy: RemoveStrategy) { }
   
+  // TODO: Refactor customized grapic object
   setColor(g: CanvasRenderingContext2D): void {
     g.fillStyle = this.color;
   }
