@@ -39,7 +39,7 @@ class Key implements Tile {
   }
   
   draw(g: CanvasRenderingContext2D, x: number, y: number): void {
-    g.fillStyle = this.keyConf.getColor();
+    this.keyConf.setColor(g);
     g.fillRect(
       x * TILE_SIZE,
       y * TILE_SIZE,
@@ -49,12 +49,12 @@ class Key implements Tile {
   }  
 
   moveHorizontal(dx: number): void {
-    remove(this.keyConf.getRemoveStrategy());
+    this.keyConf.removeLock();
     moveToTile(playerx + dx, playery);
   }
 
   moveVertical(dy: number) {
-    remove(this.keyConf.getRemoveStrategy());
+    this.keyConf.removeLock();
     moveToTile(playerx, playery + dy);
   }
 

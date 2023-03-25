@@ -4,15 +4,15 @@ class KeyConfiguration {
     private _1: boolean,
     private removeStrategy: RemoveStrategy) { }
   
-  getColor(): string {
-    return this.color;
+  setColor(g: CanvasRenderingContext2D): void {
+    g.fillStyle = this.color;
   }
 
   is1(): boolean {
     return this._1;
   }
 
-  getRemoveStrategy(): RemoveStrategy {
-    return this.removeStrategy;
+  removeLock() {
+    remove(this.removeStrategy);
   }
 }
