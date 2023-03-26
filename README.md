@@ -92,6 +92,10 @@ _forked from https://github.com/wikibook/five-lines_
 
 - 기능을 데이터에 더 가깝게 이동하여 getter 와 setter 를 제거할 수 있다.
 
+### 데이터 캡슐화
+
+- 변수와 메서드를 클래스로 옮겨 접근할 수 있는 지점을 제한하고 구조를 명확하게 만들 수 있다.
+
 ---
 
 ## 퍼즐 게임
