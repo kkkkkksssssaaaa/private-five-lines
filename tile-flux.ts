@@ -45,8 +45,12 @@ class Flux implements Tile {
     );
   }
 
-  moveHorizontal(dx: number): void {
-    moveToTile(playerx + dx, playery);
+  moveHorizontal(player: Player, dx: number): void {
+    moveToTile(player.getX() + dx, player.getY());
+  }
+
+  moveVertical(player: Player, dy: number): void {
+      
   }
 
   update(x: number, y: number): void {

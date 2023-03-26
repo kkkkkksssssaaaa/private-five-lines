@@ -45,8 +45,12 @@ class Unbreakable implements Tile {
     );
   }
 
-  moveHorizontal(dx: number): void {
+  moveHorizontal(player: Player, dx: number): void {
 
+  }
+
+  moveVertical(player: Player, dy: number): void {
+      
   }
 
   update(x: number, y: number): void {

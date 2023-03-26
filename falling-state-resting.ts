@@ -3,11 +3,11 @@ class Resting implements FallingState {
     return false;
   }
 
-  moveHorizontal(tile: Tile, dx: number): void {
-    if (map[playery][playerx + dx + dx].isAir()
-      && !map[playery + 1][playerx + dx].isAir()) {
-      map[playery][playerx + dx + dx] = tile;
-      moveToTile(playerx + dx, playery);
+  moveHorizontal(player: Player, tile: Tile, dx: number): void {
+    if (map[player.getY()][player.getX() + dx + dx].isAir()
+      && !map[player.getY() + 1][player.getX() + dx].isAir()) {
+      map[player.getY()][player.getX() + dx + dx] = tile;
+      moveToTile(player.getX() + dx, player.getY());
     }
   }
 

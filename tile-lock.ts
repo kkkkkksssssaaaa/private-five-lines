@@ -48,7 +48,11 @@ class LockTile implements Tile {
     );
   }  
 
-  moveHorizontal(dx: number): void {
+  moveHorizontal(player: Player, dx: number): void {
+      
+  }
+
+  moveVertical(player: Player, dy: number): void {
       
   }
 

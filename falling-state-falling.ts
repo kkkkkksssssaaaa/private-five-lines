@@ -3,7 +3,7 @@ class Falling implements FallingState {
     return true;
   }
 
-  moveHorizontal(tile: Tile, dx: number): void {
+  moveHorizontal(player: Player, tile: Tile, dx: number): void {
 
   }
 

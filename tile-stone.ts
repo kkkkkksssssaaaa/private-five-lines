@@ -51,9 +51,13 @@ class Stone implements Tile {
     );
   }
 
-  moveHorizontal(dx: number): void {
+  moveHorizontal(player: Player, dx: number): void {
     this.fallingStrategy
-      .moveHorizontal(this, dx);
+      .moveHorizontal(player, this, dx);
+  }
+
+  moveVertical(player: Player, dy: number): void {
+      
   }
 
   update(x: number, y: number): void {

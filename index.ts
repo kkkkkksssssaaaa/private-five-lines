@@ -20,8 +20,7 @@ const YELLOW_KEY =
 const SKY_KEY =
   new KeyConfiguration("#ffcc00", false, new RemoveLock2());
 
-let playerx = 1;
-let playery = 1;
+let player = new Player();
 let rawMap: RawTile[][] = [
   [2, 2, 2, 2, 2, 2, 2, 2],
   [2, 3, 0, 1, 1, 2, 0, 2],
@@ -79,26 +78,26 @@ function remove(shouldRemove: RemoveStrategy) {
 }
 
 function moveToTile(newx: number, newy: number) {
-  map[playery][playerx] = new Air();
+  map[player.getY()][player.getX()] = new Air();
   map[newy][newx] = new PlayerTile();
-  playerx = newx;
-  playery = newy;
+  player.setX(newx);
+  player.setY(newy);
 }
 
 function moveHorizontal(dx: number) {
-  map[playery][playerx + dx].moveHorizontal(dx);
+  map[player.getY()][player.getX() + dx].moveHorizontal(player, dx);
 }
 
 function moveVertical(dy: number) {
-  if (map[playery + dy][playerx].isFlux()
-    || map[playery + dy][playerx].isAir()) {
-    moveToTile(playerx, playery + dy);
-  } else if (map[playery + dy][playerx].isKey1()) {
+  if (map[player.getY() + dy][player.getX()].isFlux()
+    || map[player.getY() + dy][player.getX()].isAir()) {
+    moveToTile(player.getX(), player.getY() + dy);
+  } else if (map[player.getY() + dy][player.getX()].isKey1()) {
     remove(new RemoveLock1());
-    moveToTile(playerx, playery + dy);
-  } else if (map[playery + dy][playerx].isKey2()) {
+    moveToTile(player.getX(), player.getY() + dy);
+  } else if (map[player.getY() + dy][player.getX()].isKey2()) {
     remove(new RemoveLock2());
-    moveToTile(playerx, playery + dy);
+    moveToTile(player.getX(), player.getY() + dy);
   }
 }
 
@@ -159,7 +158,7 @@ function drawTile(g: CanvasRenderingContext2D, x: number, y: number) {
 
 function drawPlayer(g: CanvasRenderingContext2D) {
   g.fillStyle = "#ff0000";
-  g.fillRect(playerx * TILE_SIZE, playery * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+  g.fillRect(player.getX() * TILE_SIZE, player.getY() * TILE_SIZE, TILE_SIZE, TILE_SIZE);
 }
 
 function gameLoop() {

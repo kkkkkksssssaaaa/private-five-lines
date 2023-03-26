@@ -3,8 +3,8 @@ class FallStrategy {
     this.falling = falling;
   }
 
-  moveHorizontal(tile: Tile, dx: number) {
-    this.falling.moveHorizontal(tile, dx);
+  moveHorizontal(player: Player, tile: Tile, dx: number) {
+    this.falling.moveHorizontal(player, tile, dx);
   }
 
   update(tile: Tile, x: number, y: number): void {
