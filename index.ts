@@ -88,16 +88,7 @@ function moveHorizontal(dx: number) {
 }
 
 function moveVertical(dy: number) {
-  if (map[player.getY() + dy][player.getX()].isFlux()
-    || map[player.getY() + dy][player.getX()].isAir()) {
-    moveToTile(player.getX(), player.getY() + dy);
-  } else if (map[player.getY() + dy][player.getX()].isKey1()) {
-    remove(new RemoveLock1());
-    moveToTile(player.getX(), player.getY() + dy);
-  } else if (map[player.getY() + dy][player.getX()].isKey2()) {
-    remove(new RemoveLock2());
-    moveToTile(player.getX(), player.getY() + dy);
-  }
+  map[player.getY() + dy][player.getX()].moveVertical(player, dy);
 }
 
 function update() {

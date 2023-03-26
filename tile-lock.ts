@@ -26,14 +26,6 @@ class LockTile implements Tile {
     return !this.keyConf.is1();
   }
 
-  isKey1(): boolean {
-    return false;
-  }
-
-  isKey2(): boolean {
-    return false;
-  }
-  
   color(g: CanvasRenderingContext2D): void {
     
   }
