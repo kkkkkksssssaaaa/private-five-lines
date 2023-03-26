@@ -18,3 +18,5 @@ class Player {
     this.y = y;
   }
 }
+
+let player = new Player();

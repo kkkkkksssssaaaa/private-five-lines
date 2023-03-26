@@ -20,7 +20,6 @@ const YELLOW_KEY =
 const SKY_KEY =
   new KeyConfiguration("#ffcc00", false, new RemoveLock2());
 
-let player = new Player();
 let rawMap: RawTile[][] = [
   [2, 2, 2, 2, 2, 2, 2, 2],
   [2, 3, 0, 1, 1, 2, 0, 2],
