@@ -55,4 +55,8 @@ class LockTile implements Tile {
   update(x: number, y: number): void {
     
   }
+
+  getBlockOnTopState(): FallingState {
+    return new Resting();
+  }
 }

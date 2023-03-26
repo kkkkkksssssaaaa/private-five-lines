@@ -59,4 +59,8 @@ class Stone implements Tile {
   update(x: number, y: number): void {
     this.fallingStrategy.update(this, x, y);
   }
+
+  getBlockOnTopState(): FallingState {
+    return new Resting();
+  }
 }
