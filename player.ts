@@ -17,6 +17,15 @@ class Player {
   setY(y: number): void {
     this.y = y;
   }
+
+  draw(g: CanvasRenderingContext2D): void {
+    g.fillStyle = "#ff0000";
+    g.fillRect(
+      this.x * TILE_SIZE,
+      this.y * TILE_SIZE,
+      TILE_SIZE,
+      TILE_SIZE);
+  }
 }
 
 let player = new Player();
