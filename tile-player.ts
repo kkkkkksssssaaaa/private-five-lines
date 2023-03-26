@@ -1,4 +1,4 @@
-class Player implements Tile {
+class PlayerTile implements Tile {
   isFlux(): boolean {
     return false;
   }

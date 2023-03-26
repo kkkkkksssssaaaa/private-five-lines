@@ -43,7 +43,7 @@ function transformTile(tile: RawTile) {
     case RawTile.AIR: return new Air();
     case RawTile.FLUX: return new Flux();
     case RawTile.UNBREAKABLE: return new Unbreakable();
-    case RawTile.PLAYER: return new Player();
+    case RawTile.PLAYER: return new PlayerTile();
     case RawTile.STONE: return new Stone(new Resting());
     case RawTile.FALLING_STONE: return new Stone(new Falling());
     case RawTile.BOX: return new Box(new Resting());
@@ -80,7 +80,7 @@ function remove(shouldRemove: RemoveStrategy) {
 
 function moveToTile(newx: number, newy: number) {
   map[playery][playerx] = new Air();
-  map[newy][newx] = new Player();
+  map[newy][newx] = new PlayerTile();
   playerx = newx;
   playery = newy;
 }
