@@ -53,7 +53,6 @@ class Stone implements Tile {
 
   moveHorizontal(dx: number): void {
     this.fallingStrategy
-      .getFalling()
       .moveHorizontal(this, dx);
   }
 

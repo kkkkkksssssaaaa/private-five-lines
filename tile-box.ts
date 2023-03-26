@@ -53,7 +53,6 @@ class Box implements Tile {
 
   moveHorizontal(dx: number): void {
     this.fallingStrategy
-      .getFalling()
       .moveHorizontal(this, dx);
   }
 
