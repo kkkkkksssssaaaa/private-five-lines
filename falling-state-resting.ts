@@ -10,4 +10,8 @@ class Resting implements FallingState {
       moveToTile(playerx + dx, playery);
     }
   }
+
+  drop(tile: Tile, x: number, y: number): void {
+      
+  }
 }

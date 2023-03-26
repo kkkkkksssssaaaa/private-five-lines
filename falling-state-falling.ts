@@ -6,4 +6,9 @@ class Falling implements FallingState {
   moveHorizontal(tile: Tile, dx: number): void {
 
   }
+
+  drop(tile: Tile, x: number, y: number): void {
+    map[y + 1][x] = tile;
+    map[y][x] = new Air();
+  }
 }
