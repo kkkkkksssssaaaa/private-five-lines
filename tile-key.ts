@@ -42,12 +42,12 @@ class Key implements Tile {
 
   moveHorizontal(player: Player, dx: number): void {
     this.keyConf.removeLock();
-    moveToTile(player.getX() + dx, player.getY());
+    player.moveHorizontal(dx);
   }
 
   moveVertical(player: Player, dy: number) {
     this.keyConf.removeLock();
-    moveToTile(player.getX(), player.getY() + dy);
+    player.moveVertical(dy);
   }
 
   update(x: number, y: number): void {

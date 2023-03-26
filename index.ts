@@ -76,21 +76,6 @@ function remove(shouldRemove: RemoveStrategy) {
   }
 }
 
-function moveToTile(newx: number, newy: number) {
-  map[player.getY()][player.getX()] = new Air();
-  map[newy][newx] = new PlayerTile();
-  player.setX(newx);
-  player.setY(newy);
-}
-
-function moveHorizontal(dx: number) {
-  map[player.getY()][player.getX() + dx].moveHorizontal(player, dx);
-}
-
-function moveVertical(dy: number) {
-  map[player.getY() + dy][player.getX()].moveVertical(player, dy);
-}
-
 function update() {
   handleInputs();
   updateMap();
@@ -99,27 +84,23 @@ function update() {
 function handleInputs() {
   while (inputs.length > 0) {
     let input = inputs.pop();
-    input.handle();
+    input.handle(player);
   }
 }
 
 function updateMap() {
   for (let y = map.length - 1; y >= 0; y--) {
     for (let x = 0; x < map[y].length; x++) {
-      updateTile(x, y);
+      map[y][x].update(x, y);
     }
   }
-}
-
-function updateTile(x: number, y: number) {
-  map[y][x].update(x, y);
 }
 
 function draw() {
   let g = createGraphics();
 
   drawMap(g);
-  drawPlayer(g);
+  player.draw(g);
 }
 
 function createGraphics() {
@@ -147,7 +128,7 @@ function drawTile(g: CanvasRenderingContext2D, x: number, y: number) {
 }
 
 function drawPlayer(g: CanvasRenderingContext2D) {
-  player.draw(g);
+
 }
 
 function gameLoop() {

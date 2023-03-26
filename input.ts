@@ -3,7 +3,7 @@ interface Input {
   isLeft(): boolean;
   isUp(): boolean;
   isDown(): boolean;
-  handle(): void;
+  handle(player: Player): void;
 }
 
 class Right implements Input {
@@ -23,8 +23,8 @@ class Right implements Input {
     return false;
   }
 
-  handle() {
-    moveHorizontal(1);
+  handle(player: Player) {
+    player.moveHorizontal(1);
   }
 }
 
@@ -45,8 +45,8 @@ class Left implements Input {
     return false;
   }
 
-  handle() {
-    moveHorizontal(-1);
+  handle(player: Player) {
+    player.moveHorizontal(-1);
   }
 }
 
@@ -67,8 +67,8 @@ class Up implements Input {
     return false;
   }
 
-  handle() {
-    moveVertical(-1);
+  handle(player: Player) {
+    player.moveVertical(-1);
   }
 }
 
@@ -89,7 +89,7 @@ class Down implements Input {
     return true;
   }
 
-  handle() {
-    moveVertical(1);
+  handle(player: Player) {
+    player.moveVertical(1);
   }
 }
