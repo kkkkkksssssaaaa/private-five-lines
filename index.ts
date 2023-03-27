@@ -58,13 +58,7 @@ function transformMap() {
 }
 
 function remove(shouldRemove: RemoveStrategy) {
-  for (let y = 0; y < map.getMap().length; y++) {
-    for (let x = 0; x < map.getMap()[y].length; x++) {
-      if (shouldRemove.check(map.getMap()[y][x])) {
-        map.getMap()[y][x] = new Air();
-      }
-    }
-  }
+  map.remove(shouldRemove);
 }
 
 function update() {
@@ -75,7 +69,7 @@ function update() {
 function handleInputs() {
   while (inputs.length > 0) {
     let input = inputs.pop();
-    input.handle(player);
+    input.handle(map, player);
   }
 }
 

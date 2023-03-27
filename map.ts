@@ -1,14 +1,6 @@
 class Map {
   private map: Tile[][];
 
-  getMap(): Tile[][] {
-    return this.map;
-  }
-
-  setMap(map: Tile[][]): void {
-    this.map = map;
-  }
-
   transform(): void {
     this.map = new Array(rawMap.length);
 
@@ -33,6 +25,56 @@ class Map {
     for (let y = 0; y < this.map.length; y++) {
       for (let x = 0; x < this.map[y].length; x++) {
         this.map[y][x].draw(g, x, y);
+      }
+    }
+  }
+
+  drop(tile: Tile, x: number, y: number): void {
+    this.map[y + 1][x] = tile;
+    this.map[y][x] = new Air();
+  }
+
+  getBlockOnTopState(x: number, y: number): FallingState {
+    return this.map[y][x].getBlockOnTopState();
+  }
+
+  isAir(x: number, y: number): boolean {
+    return this.map[y][x].isAir();
+  }
+
+  setTile(x: number, y: number, tile: Tile): void {
+    this.map[x][y] = tile;
+  }
+
+  movePlayer(x: number, y: number, newx: number, newy: number): void {
+    this.map[y][x] = new Air();
+    this.map[newy][newx] = new PlayerTile();
+  }
+
+  moveHorizontal(player: Player, x: number, y: number, dx: number): void {
+    this.map[y][x + dx]
+      .moveHorizontal(this, player, dx);
+  }
+
+  moveVertical(player: Player, x: number, y: number, dy: number): void {
+    this.map[y + dy][x]
+      .moveVertical(this, player, dy);
+  }
+
+  pushHorizontal(player: Player, tile: Tile, x: number, y: number, dx: number): void {
+    if (this.map[y][x + dx + dx].isAir()
+      && !this.map[y + 1][x + dx].isAir()) {
+      this.map[y][y + dx + dx] = tile;
+      player.moveToTile(this, x + dx, y);
+    }
+  }
+
+  remove(shouldRemove: RemoveStrategy): void {
+    for (let y = 0; y < this.map.length; y++) {
+      for (let x = 0; x < this.map[y].length; x++) {
+        if (shouldRemove.check(this.map[y][x])) {
+          this.map[y][x] = new Air();
+        }
       }
     }
   }

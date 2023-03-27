@@ -45,7 +45,7 @@ class Stone implements Tile {
 
   moveHorizontal(map: Map, player: Player, dx: number): void {
     this.fallingStrategy
-      .moveHorizontal(player, this, dx);
+      .moveHorizontal(map, player, this, dx);
   }
 
   moveVertical(map: Map, player: Player, dy: number): void {
@@ -53,7 +53,7 @@ class Stone implements Tile {
   }
 
   update(map: Map, x: number, y: number): void {
-    this.fallingStrategy.update(this, x, y);
+    this.fallingStrategy.update(map, this, x, y);
   }
 
   getBlockOnTopState(): FallingState {

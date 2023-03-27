@@ -3,12 +3,11 @@ class Falling implements FallingState {
     return true;
   }
 
-  moveHorizontal(player: Player, tile: Tile, dx: number): void {
+  moveHorizontal(map: Map, player: Player, tile: Tile, dx: number): void {
 
   }
 
-  drop(tile: Tile, x: number, y: number): void {
-    map.getMap()[y + 1][x] = tile;
-    map.getMap()[y][x] = new Air();
+  drop(map: Map, tile: Tile, x: number, y: number): void {
+    map.drop(tile, x, y);
   }
 }
