@@ -91,4 +91,8 @@ class RawTile2 {
   private constructor(private value: RawTileValue) {
 
   }
+
+  transform(): Tile {
+    return this.value.transform();
+  }
 }

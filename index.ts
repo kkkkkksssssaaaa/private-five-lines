@@ -36,21 +36,7 @@ function assertExhausted(x: never): never {
 }
 
 function transformTile(tile: RawTile2) {
-  switch(tile) {
-    case RawTile.AIR: return new Air();
-    case RawTile.FLUX: return new Flux();
-    case RawTile.UNBREAKABLE: return new Unbreakable();
-    case RawTile.PLAYER: return new PlayerTile();
-    case RawTile.STONE: return new Stone(new Resting());
-    case RawTile.FALLING_STONE: return new Stone(new Falling());
-    case RawTile.BOX: return new Box(new Resting());
-    case RawTile.FALLING_BOX: return new Box(new Falling());
-    case RawTile.KEY1: return new Key(YELLOW_KEY);
-    case RawTile.KEY2: return new Key(SKY_KEY);
-    case RawTile.LOCK1: return new LockTile(YELLOW_KEY);
-    case RawTile.LOCK2: return new LockTile(SKY_KEY);
-    default: assertExhausted(tile);
-  }
+  return tile.transform();
 }
 
 function remove(shouldRemove: RemoveStrategy) {
