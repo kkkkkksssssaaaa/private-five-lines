@@ -74,19 +74,19 @@ class Lock2Value implements RawTileValue {
   }
 }
 
-class RawTile2 {
-  static readonly AIR = new RawTile2(new AirValue());
-  static readonly FLUX = new RawTile2(new FluxValue());
-  static readonly UNBREAKABLE = new RawTile2(new UnbreakableValue());
-  static readonly PLAYER = new RawTile2(new PlayerValue());
-  static readonly STONE = new RawTile2(new StoneValue());
-  static readonly FALLING_STONE = new RawTile2(new FallingStoneValue());
-  static readonly BOX = new RawTile2(new BoxValue());
-  static readonly FALLING_BOX = new RawTile2(new FallingBoxValue());
-  static readonly KEY1 = new RawTile2(new Key1Value());
-  static readonly KEY2 = new RawTile2(new Key2Value());
-  static readonly LOCk1 = new RawTile2(new Lock1Value());
-  static readonly LOCK2 = new RawTile2(new Lock2Value());
+class RawTile {
+  static readonly AIR = new RawTile(new AirValue());
+  static readonly FLUX = new RawTile(new FluxValue());
+  static readonly UNBREAKABLE = new RawTile(new UnbreakableValue());
+  static readonly PLAYER = new RawTile(new PlayerValue());
+  static readonly STONE = new RawTile(new StoneValue());
+  static readonly FALLING_STONE = new RawTile(new FallingStoneValue());
+  static readonly BOX = new RawTile(new BoxValue());
+  static readonly FALLING_BOX = new RawTile(new FallingBoxValue());
+  static readonly KEY1 = new RawTile(new Key1Value());
+  static readonly KEY2 = new RawTile(new Key2Value());
+  static readonly LOCk1 = new RawTile(new Lock1Value());
+  static readonly LOCK2 = new RawTile(new Lock2Value());
 
   private constructor(private value: RawTileValue) {
 

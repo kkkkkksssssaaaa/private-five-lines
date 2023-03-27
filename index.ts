@@ -3,15 +3,15 @@ const TILE_SIZE = 30;
 const FPS = 30;
 const SLEEP = 1000 / FPS;
 
-const RAW_TILES: RawTile2[] = [
-  RawTile2.AIR,
-  RawTile2.FLUX,
-  RawTile2.UNBREAKABLE,
-  RawTile2.PLAYER,
-  RawTile2.STONE, RawTile2.FALLING_STONE,
-  RawTile2.BOX, RawTile2.FALLING_BOX,
-  RawTile2.KEY1, RawTile2.LOCk1,
-  RawTile2.KEY2, RawTile2.LOCK2
+const RAW_TILES: RawTile[] = [
+  RawTile.AIR,
+  RawTile.FLUX,
+  RawTile.UNBREAKABLE,
+  RawTile.PLAYER,
+  RawTile.STONE, RawTile.FALLING_STONE,
+  RawTile.BOX, RawTile.FALLING_BOX,
+  RawTile.KEY1, RawTile.LOCk1,
+  RawTile.KEY2, RawTile.LOCK2
 ]
 
 const YELLOW_KEY =
@@ -35,7 +35,7 @@ function assertExhausted(x: never): never {
   throw new Error("Unexpected object: " + x);
 }
 
-function transformTile(tile: RawTile2) {
+function transformTile(tile: RawTile) {
   return tile.transform();
 }
 
