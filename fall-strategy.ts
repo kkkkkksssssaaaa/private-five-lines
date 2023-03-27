@@ -10,7 +10,7 @@ class FallStrategy {
   update(tile: Tile, x: number, y: number): void {
     // 돌이나 상자를 떨어뜨리고 타일을 교체한 후 새로 공기를 주입
     this.falling =
-      map[y + 1][x].getBlockOnTopState();
+      map.getMap()[y + 1][x].getBlockOnTopState();
     
     this.falling.drop(tile, x, y);
   }

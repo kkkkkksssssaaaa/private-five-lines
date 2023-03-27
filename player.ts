@@ -12,19 +12,19 @@ class Player {
   }
 
   moveHorizontal(dx: number): void {
-    map[this.y][this.x + dx]
+    map.getMap()[this.y][this.x + dx]
       .moveHorizontal(this, dx);
   }
 
   moveVertical(dy: number): void {
-    map[this.y + dy][this.x]
+    map.getMap()[this.y + dy][this.x]
       .moveVertical(this, dy);
   }
 
   pushHorizontal(tile: Tile, dx: number): void {
-    if (map[this.y][this.x + dx + dx].isAir()
-      && !map[this.y + 1][this.x + dx].isAir()) {
-      map[this.y][this.y + dx + dx] = tile;
+    if (map.getMap()[this.y][this.x + dx + dx].isAir()
+      && !map.getMap()[this.y + 1][this.x + dx].isAir()) {
+      map.getMap()[this.y][this.y + dx + dx] = tile;
       this.moveToTile(this.x + dx, this.y);
     }
   }
@@ -34,8 +34,8 @@ class Player {
   }
 
   private moveToTile(newx: number, newy: number): void {
-    map[this.y][this.x] = new Air();
-    map[newy][newx] = new PlayerTile();
+    map.getMap()[this.y][this.x] = new Air();
+    map.getMap()[newy][newx] = new PlayerTile();
 
     this.x = newx;
     this.y = newy;

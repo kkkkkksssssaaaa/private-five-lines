@@ -8,7 +8,7 @@ class Falling implements FallingState {
   }
 
   drop(tile: Tile, x: number, y: number): void {
-    map[y + 1][x] = tile;
-    map[y][x] = new Air();
+    map.getMap()[y + 1][x] = tile;
+    map.getMap()[y][x] = new Air();
   }
 }

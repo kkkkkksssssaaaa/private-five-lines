@@ -28,7 +28,6 @@ let rawMap: RawTile[][] = [
   [2, 4, 1, 1, 1, 9, 0, 2],
   [2, 2, 2, 2, 2, 2, 2, 2],
 ];
-let map: Tile[][];
 
 let inputs: Input[] = [];
 
@@ -55,22 +54,22 @@ function transformTile(tile: RawTile) {
 }
 
 function transformMap() {
-  map = new Array(rawMap.length);
+  map.setMap(new Array(rawMap.length));
 
   for (let y = 0; y < rawMap.length; y++) {
-    map[y] = new Array(rawMap[y].length);
+    map.getMap()[y] = new Array(rawMap[y].length);
 
     for (let x = 0; x < rawMap[y].length; x++) {
-      map[y][x] = transformTile(rawMap[y][x]);
+      map.getMap()[y][x] = transformTile(rawMap[y][x]);
     }
   }
 }
 
 function remove(shouldRemove: RemoveStrategy) {
-  for (let y = 0; y < map.length; y++) {
-    for (let x = 0; x < map[y].length; x++) {
-      if (shouldRemove.check(map[y][x])) {
-        map[y][x] = new Air();
+  for (let y = 0; y < map.getMap().length; y++) {
+    for (let x = 0; x < map.getMap()[y].length; x++) {
+      if (shouldRemove.check(map.getMap()[y][x])) {
+        map.getMap()[y][x] = new Air();
       }
     }
   }
@@ -89,9 +88,9 @@ function handleInputs() {
 }
 
 function updateMap() {
-  for (let y = map.length - 1; y >= 0; y--) {
-    for (let x = 0; x < map[y].length; x++) {
-      map[y][x].update(x, y);
+  for (let y = map.getMap().length - 1; y >= 0; y--) {
+    for (let x = 0; x < map.getMap()[y].length; x++) {
+      map.getMap()[y][x].update(x, y);
     }
   }
 }
@@ -113,17 +112,17 @@ function createGraphics() {
 }
 
 function drawMap(g: CanvasRenderingContext2D) {
-  for (let y = 0; y < map.length; y++) {
-    for (let x = 0; x < map[y].length; x++) {
-      map[y][x].draw(g, x, y);
+  for (let y = 0; y < map.getMap().length; y++) {
+    for (let x = 0; x < map.getMap()[y].length; x++) {
+      map.getMap()[y][x].draw(g, x, y);
     }
   }
 }
 
 function drawTile(g: CanvasRenderingContext2D, x: number, y: number) {
-  map[y][x].color(g);
+  map.getMap()[y][x].color(g);
 
-  if (!map[y][x].isAir() && !map[y][x].isPlayer())
+  if (!map.getMap()[y][x].isAir() && !map.getMap()[y][x].isPlayer())
     g.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
 }
 
