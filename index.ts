@@ -54,15 +54,7 @@ function transformTile(tile: RawTile) {
 }
 
 function transformMap() {
-  map.setMap(new Array(rawMap.length));
-
-  for (let y = 0; y < rawMap.length; y++) {
-    map.getMap()[y] = new Array(rawMap[y].length);
-
-    for (let x = 0; x < rawMap[y].length; x++) {
-      map.getMap()[y][x] = transformTile(rawMap[y][x]);
-    }
-  }
+  map.transform();
 }
 
 function remove(shouldRemove: RemoveStrategy) {
@@ -88,11 +80,7 @@ function handleInputs() {
 }
 
 function updateMap() {
-  for (let y = map.getMap().length - 1; y >= 0; y--) {
-    for (let x = 0; x < map.getMap()[y].length; x++) {
-      map.getMap()[y][x].update(x, y);
-    }
-  }
+  map.update();
 }
 
 function draw() {
@@ -112,11 +100,7 @@ function createGraphics() {
 }
 
 function drawMap(g: CanvasRenderingContext2D) {
-  for (let y = 0; y < map.getMap().length; y++) {
-    for (let x = 0; x < map.getMap()[y].length; x++) {
-      map.getMap()[y][x].draw(g, x, y);
-    }
-  }
+  map.draw(g);
 }
 
 function drawTile(g: CanvasRenderingContext2D, x: number, y: number) {
