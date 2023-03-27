@@ -20,10 +20,7 @@ class Player {
   }
 
   pushHorizontal(map: Map, tile: Tile, dx: number): void {
-    if (map.isAir(this.x + dx, this.y + 1)) {
-      map.setTile(this.x + dx + dx, this.y, tile);
-      this.moveToTile(map, this.x + dx, this.y);
-    }
+    map.pushHorizontal(this, tile, this.x, this.y, dx);
   }
 
   moveToTile(map: Map, newx: number, newy: number): void {
