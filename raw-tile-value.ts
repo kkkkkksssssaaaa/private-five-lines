@@ -1,29 +1,78 @@
 interface RawTileValue {
+  transform(): Tile;
 }
 
-class AirValue implements RawTileValue { }
+class AirValue implements RawTileValue { 
+  transform(): Tile {
+    return new Air();
+  }
+}
 
-class FluxValue implements RawTileValue { }
+class FluxValue implements RawTileValue {
+  transform(): Tile {
+    return new Flux();
+  }
+ }
 
-class UnbreakableValue implements RawTileValue { }
+class UnbreakableValue implements RawTileValue { 
+  transform(): Tile {
+    return new Unbreakable();
+  }
+}
 
-class PlayerValue implements RawTileValue { }
+class PlayerValue implements RawTileValue { 
+  transform(): Tile {
+    return new PlayerTile();
+  }
+}
 
-class StoneValue implements RawTileValue { }
+class StoneValue implements RawTileValue { 
+  transform(): Tile {
+    return new Stone(new Resting());
+  }
+}
 
-class FallingStoneValue implements RawTileValue { }
+class FallingStoneValue implements RawTileValue { 
+  transform(): Tile {
+    return new Stone(new Falling());
+  }
+}
 
-class BoxValue implements RawTileValue { }
+class BoxValue implements RawTileValue { 
+  transform(): Tile {
+    return new Box(new Resting());
+  }
+}
 
-class FallingBoxValue implements RawTileValue { }
+class FallingBoxValue implements RawTileValue { 
+  transform(): Tile {
+    return new Box(new Falling());
+  }
+}
 
-class Key1Value implements RawTileValue { }
+class Key1Value implements RawTileValue { 
+  transform(): Tile {
+    return new Key(YELLOW_KEY);
+  }
+}
 
-class Lock1Value implements RawTileValue { }
+class Lock1Value implements RawTileValue { 
+  transform(): Tile {
+    return new LockTile(YELLOW_KEY);
+  }
+}
 
-class Key2Value implements RawTileValue { }
+class Key2Value implements RawTileValue { 
+  transform(): Tile {
+    return new Key(SKY_KEY);
+  }
+}
 
-class Lock2Value implements RawTileValue { }
+class Lock2Value implements RawTileValue { 
+  transform(): Tile {
+    return new LockTile(SKY_KEY);
+  }
+}
 
 class RawTile2 {
   static readonly AIR = new RawTile2(new AirValue());
