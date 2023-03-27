@@ -3,16 +3,16 @@ const TILE_SIZE = 30;
 const FPS = 30;
 const SLEEP = 1000 / FPS;
 
-enum RawTile {
-  AIR,
-  FLUX,
-  UNBREAKABLE,
-  PLAYER,
-  STONE, FALLING_STONE,
-  BOX, FALLING_BOX,
-  KEY1, LOCK1,
-  KEY2, LOCK2
-}
+const RAW_TILES: RawTile2[] = [
+  RawTile2.AIR,
+  RawTile2.FLUX,
+  RawTile2.UNBREAKABLE,
+  RawTile2.PLAYER,
+  RawTile2.STONE, RawTile2.FALLING_STONE,
+  RawTile2.BOX, RawTile2.FALLING_BOX,
+  RawTile2.KEY1, RawTile2.LOCk1,
+  RawTile2.KEY2, RawTile2.LOCK2
+]
 
 const YELLOW_KEY =
   new KeyConfiguration("#ffcc00", true, new RemoveLock1());
@@ -20,7 +20,7 @@ const YELLOW_KEY =
 const SKY_KEY =
   new KeyConfiguration("#ffcc00", false, new RemoveLock2());
 
-let rawMap: RawTile[][] = [
+let rawMap: number[][] = [
   [2, 2, 2, 2, 2, 2, 2, 2],
   [2, 3, 0, 1, 1, 2, 0, 2],
   [2, 4, 2, 6, 1, 2, 0, 2],
@@ -35,7 +35,7 @@ function assertExhausted(x: never): never {
   throw new Error("Unexpected object: " + x);
 }
 
-function transformTile(tile: RawTile) {
+function transformTile(tile: RawTile2) {
   switch(tile) {
     case RawTile.AIR: return new Air();
     case RawTile.FLUX: return new Flux();

@@ -8,7 +8,7 @@ class Map {
       this.map[y] = new Array(rawMap[y].length);
 
       for (let x = 0; x < rawMap[y].length; x++) {
-        this.map[y][x] = transformTile(rawMap[y][x]);
+        this.map[y][x] = transformTile(RAW_TILES[rawMap[y][x]]);
       }
     }
   }
