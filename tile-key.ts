@@ -40,17 +40,17 @@ class Key implements Tile {
     );
   }  
 
-  moveHorizontal(player: Player, dx: number): void {
+  moveHorizontal(map: Map, player: Player, dx: number): void {
     this.keyConf.removeLock();
     player.moveHorizontal(dx);
   }
 
-  moveVertical(player: Player, dy: number) {
+  moveVertical(map: Map, player: Player, dy: number) {
     this.keyConf.removeLock();
     player.moveVertical(dy);
   }
 
-  update(x: number, y: number): void {
+  update(map: Map, x: number, y: number): void {
   }
 
   getBlockOnTopState(): FallingState {
