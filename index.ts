@@ -98,10 +98,7 @@ function drawMap(g: CanvasRenderingContext2D) {
 }
 
 function drawTile(g: CanvasRenderingContext2D, x: number, y: number) {
-  map.getMap()[y][x].color(g);
-
-  if (!map.getMap()[y][x].isAir() && !map.getMap()[y][x].isPlayer())
-    g.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+  map.drawTile(g, x, y);
 }
 
 function drawPlayer(g: CanvasRenderingContext2D) {

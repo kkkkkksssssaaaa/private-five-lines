@@ -42,6 +42,13 @@ class Map {
     return this.map[y][x].isAir();
   }
 
+  drawTile(g: CanvasRenderingContext2D, x: number, y: number) {
+    this.map[y][x].color(g);
+
+    if (!this.isAir(x, y) && !this.map[y][x].isPlayer())
+      this.map[y][x].draw(g, x, y);
+  }
+
   setTile(x: number, y: number, tile: Tile): void {
     this.map[x][y] = tile;
   }
