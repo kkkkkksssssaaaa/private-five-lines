@@ -53,10 +53,6 @@ function transformTile(tile: RawTile) {
   }
 }
 
-function transformMap() {
-  map.transform();
-}
-
 function remove(shouldRemove: RemoveStrategy) {
   map.remove(shouldRemove);
 }
@@ -116,7 +112,6 @@ function gameLoop() {
 }
 
 window.onload = () => {
-  transformMap();
   gameLoop();
 }
 

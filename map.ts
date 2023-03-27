@@ -1,7 +1,7 @@
 class Map {
   private map: Tile[][];
 
-  transform(): void {
+  constructor() {
     this.map = new Array(rawMap.length);
 
     for (let y = 0; y < rawMap.length; y++) {
