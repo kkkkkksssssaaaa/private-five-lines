@@ -9,11 +9,29 @@ namespace Legacy {
 
   export class Gate {
     a() {
-      return LegacyA.a();
+      try {
+        let result = LegacyA.a();
+        console.log("a success");
+
+        return result;
+      } catch (e) {
+        console.error("a fail");
+        
+        throw e;
+      }
     }
 
     bClass() {
-      return new LegacyB();
+      try {
+        let result = new LegacyB();
+        console.log("bClass success");
+
+        return result;
+      } catch (e) {
+        console.error("bClass fail");
+        
+        throw e;
+      }
     }
   }
 }
