@@ -1,12 +1,25 @@
-class LegacyA {
-  static a() { }
+namespace Legacy {
+  class LegacyA {
+    static a() { }
+  }
+
+  class LegacyB {
+    b() { }
+  }
+
+  export class Gate {
+    a() {
+      return LegacyA.a();
+    }
+
+    bClass() {
+      return new LegacyB();
+    }
+  }
 }
 
-class LegacyB {
-  b() { }
-}
+let gate = new Legacy.Gate();
+gate.a();
 
-LegacyA.a();
-
-let b = new LegacyB();
+let b = gate.bClass();
 b.b();
